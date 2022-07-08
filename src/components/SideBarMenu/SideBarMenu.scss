@@ -59,13 +59,14 @@
 
 .controller-dark-theme {
     @include dark-theme;
-    width: 20%;
+    width: 200px;
     height: 90.9vh;
     left: 2%;
     border-radius: 0.5rem;
     position: absolute;
     top: 3%;
         z-index: 1;
+        // max-width: 200px;
 
     .controller-remote {
         width: 80%;
