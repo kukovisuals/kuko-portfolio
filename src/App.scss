@@ -1,0 +1,134 @@
+@import "./utilities/variablesStyle.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    // overflow: hidden;
+    background-color: #21202e;
+    font-family: "Noto Sans JP", sans-serif;
+    // color: white;
+    font-size: 12px;
+}
+
+.App {
+    position: relative;
+    height: 100vh;
+    overflow:hidden;  
+
+
+}
+
+.grid-road {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-left: 3%;
+}
+
+@mixin border-all {
+    // border: 1px solid black;
+    margin-bottom: 1%;
+}
+
+.svg-element {
+    width: 100%;
+    top: 0;
+    position: absolute;
+    // transform: rotate(180deg);
+    z-index: -100;
+    @include border-all;
+
+    path {
+        stroke: #0fb2f2;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 40;
+        animation: dash 3s linear;
+    }
+    @keyframes dash {
+        from {
+            stroke-dashoffset: 500;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+}
+.grid-item-cell-1 {
+    @include border-all;
+    width: 30%;
+    border-radius: 0px 100px 100px 0;
+}
+.grid-item-cell-2 {
+    @include border-all;
+    width: 30%;
+    border-radius: 100px;
+}
+.grid-item-cell-3 {
+    @include border-all;
+    width: 35%;
+    border-radius: 0px 100px 0 100px;
+}
+.grid-item-cell-4 {
+    @include border-all;
+    width: 30%;
+    margin-left: 1%;
+    border-radius: 100px;
+}
+.grid-item-cell-5 {
+    @include border-all;
+    width: 30%;
+    border-radius: 100px;
+}
+.grid-item-cell-6 {
+    @include border-all;
+    width: 30%;
+    border-radius: 100px;
+}
+.grid-item-cell-7 {
+    @include border-all;
+    width: 30%;
+    border-radius: 100px;
+}
+
+
+
+.controller-carusel {
+    // border: 1px solid black;
+    position: absolute;
+    width: 300vh;
+    transition: transform 1s;
+
+    .controller-carusel-grid {
+        margin-left: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem;
+
+        .controller-carusel-items {
+            width: 19%;
+background: linear-gradient(315deg, #2c2e3a, #252731);
+box-shadow:  -6px -6px 12px #1b1c24,
+             6px 6px 12px #373a48;
+
+            .controller-carusel-image{
+                    width: 97%;
+    padding: 0.4rem;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+.controller-hide{
+    height: 100vh;
+    width: 28%;
+    background-color: #21202e;
+    position:absolute;
+}  
