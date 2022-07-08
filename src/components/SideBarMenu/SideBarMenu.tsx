@@ -29,10 +29,10 @@ const ArrowsRemote = () => {
 
    const handleClick = (event: React.MouseEvent<HTMLImageElement>): any => {
         event.stopPropagation();
-       useMove(event.currentTarget.id)
+       moveCarousel(event.currentTarget.id)
 
    }
-    const useMove = (name:string | number):void => {
+    const moveCarousel = (name:string | number):void => {
 
         switch(name){
            case 'up':  
@@ -59,7 +59,7 @@ const ArrowsRemote = () => {
     React.useEffect(() => {
         const keyDownFucntion = (ev: KeyboardEvent) => {
             console.log(ev.keyCode);
-            useMove(ev.keyCode)
+            moveCarousel(ev.keyCode)
         }
 
         document.addEventListener("keydown", keyDownFucntion);
@@ -70,7 +70,7 @@ const ArrowsRemote = () => {
 
     // window.onkeydown = (ev: KeyboardEvent): any => {
     //      // console.log(ev.keyCode)
-    //      useMove(ev.keyCode)
+    //      moveCarousel(ev.keyCode)
     // }
     return(
 
