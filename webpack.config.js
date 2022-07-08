@@ -28,9 +28,6 @@ module.exports = {
   },
   plugins: [
      new MiniCssExtractPlugin(), 
-     new IgnorePlugin({
-      resourceRegExp: /stable/,
-    }),
      new HtmlWebpackPlugin({
      template: './src/index.html'
    })
