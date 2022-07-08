@@ -7,10 +7,8 @@
 Use the package manager [npm] to install the app in the root directory 
 
 made with Node -v
-v18.0.0
+v16.5.0
 
-npm -version
-8.6.0
 
 ```bash
 npm install 

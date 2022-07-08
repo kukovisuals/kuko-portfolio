@@ -29,7 +29,6 @@ const ArrowsRemote = () => {
 
    const handleClick = (event: React.MouseEvent<HTMLImageElement>): any => {
         event.stopPropagation();
-       // console.log(event.currentTarget.id)
        useMove(event.currentTarget.id)
 
    }
@@ -58,13 +57,21 @@ const ArrowsRemote = () => {
 
 
     React.useEffect(() => {
-        window.onkeydown = (ev: KeyboardEvent): any => {
-             // console.log(ev.keyCode)
-             useMove(ev.keyCode)
+        const keyDownFucntion = (ev: KeyboardEvent) => {
+            console.log(ev.keyCode);
+            useMove(ev.keyCode)
         }
-        return () => {}
+
+        document.addEventListener("keydown", keyDownFucntion);
+
+        return () =>  document.removeEventListener("keydown", keyDownFucntion);
+            
     },[])
-    
+
+    // window.onkeydown = (ev: KeyboardEvent): any => {
+    //      // console.log(ev.keyCode)
+    //      useMove(ev.keyCode)
+    // }
     return(
 
         <div className="controller-remote-grid">
