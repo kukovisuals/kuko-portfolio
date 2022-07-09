@@ -3,8 +3,8 @@ import "./SideBarMenu.scss";
 // import { sideBar } from "../../data/sideBar";
 // import { Link } from "react-router-dom";
 // import { ListProps } from "../utilities/_namesAndStuff";
-import { useAppDispatch, useAppSelector } from "../../Hook/Hook";
-import { down, up,left, right, amountAdded } from "../../redux/reducer/counter-slice";
+import { useAppDispatch } from "../../Hook/Hook";
+import { down, up,left, right } from "../../redux/reducer/counter-slice";
 
 
 function SideBarMenu() {
@@ -12,16 +12,12 @@ function SideBarMenu() {
 
     return (
         <nav className="controller-dark-theme">
-            <div className="controller-remote">
-                <ArrowsRemote/>
-                <SeatchRemote/>
-                <ButtonsRemote/>
-                <ContactRemote/>
-            </div>
-            
+                <ArrowsRemote/>            
         </nav>
     );
 }
+
+
 
 const ArrowsRemote = () => {
 
@@ -66,12 +62,8 @@ const ArrowsRemote = () => {
 
         return () =>  document.removeEventListener("keydown", keyDownFucntion);
             
-    },[])
+    },[moveCarousel])
 
-    // window.onkeydown = (ev: KeyboardEvent): any => {
-    //      // console.log(ev.keyCode)
-    //      moveCarousel(ev.keyCode)
-    // }
     return(
 
         <div className="controller-remote-grid">
@@ -117,90 +109,90 @@ const ArrowsRemote = () => {
     )
 }
 
-const SeatchRemote = () => (
-    <div className="controller-remote-search">
-        <div className="controller-remote-input">
-            <input type="text"/>
-        </div>
-    </div>
-)
+// const SeatchRemote = () => (
+//     <div className="controller-remote-search">
+//         <div className="controller-remote-input">
+//             <input type="text"/>
+//         </div>
+//     </div>
+// )
 
-const ButtonsRemote = () => (
-    <div className="controller-remote-buttons">
-        <div className="controller-remote-buttons-grid">
-            <div className="controller-remote-buttons-item1">
-                <div className="controller-remote-buttons-img">
+// const ButtonsRemote = () => (
+//     <div className="controller-remote-buttons">
+//         <div className="controller-remote-buttons-grid">
+//             <div className="controller-remote-buttons-item1">
+//                 <div className="controller-remote-buttons-img">
 
-                <img
-                    src="https://visualpharm.com/assets/400/Modern%20Art-595b40b75ba036ed117d867c.svg"
-                    alt="up"
-                />
-                </div>
-            </div>
-            <div className="controller-remote-buttons-item2">
-                <div className="controller-remote-buttons-img">
+//                 <img
+//                     src="https://visualpharm.com/assets/400/Modern%20Art-595b40b75ba036ed117d867c.svg"
+//                     alt="up"
+//                 />
+//                 </div>
+//             </div>
+//             <div className="controller-remote-buttons-item2">
+//                 <div className="controller-remote-buttons-img">
 
-                <img
-                    src="https://visualpharm.com/assets/951/Web%20Design-595b40b75ba036ed117d6dd6.svg"
-                    alt="up"
-                />
-                </div>
-            </div>
-            <div className="controller-remote-buttons-item3">
-                <div className="controller-remote-buttons-img">
+//                 <img
+//                     src="https://visualpharm.com/assets/951/Web%20Design-595b40b75ba036ed117d6dd6.svg"
+//                     alt="up"
+//                 />
+//                 </div>
+//             </div>
+//             <div className="controller-remote-buttons-item3">
+//                 <div className="controller-remote-buttons-img">
 
-                <img
-                    src="https://visualpharm.com/assets/818/List%202-595b40b65ba036ed117d2f25.svg"
-                    alt="up"
-                />
-                </div>
-            </div>
-            <div className="controller-remote-buttons-item4">
-                <div className="controller-remote-buttons-img">
+//                 <img
+//                     src="https://visualpharm.com/assets/818/List%202-595b40b65ba036ed117d2f25.svg"
+//                     alt="up"
+//                 />
+//                 </div>
+//             </div>
+//             <div className="controller-remote-buttons-item4">
+//                 <div className="controller-remote-buttons-img">
 
-                <img
-                    src="https://visualpharm.com/assets/787/Github-595b40b75ba036ed117d609e.svg"
-                    alt="up"
-                />
-                </div>
-            </div>
-            <div className="controller-remote-buttons-item5">
-                <div className="controller-remote-buttons-img">
+//                 <img
+//                     src="https://visualpharm.com/assets/787/Github-595b40b75ba036ed117d609e.svg"
+//                     alt="up"
+//                 />
+//                 </div>
+//             </div>
+//             <div className="controller-remote-buttons-item5">
+//                 <div className="controller-remote-buttons-img">
 
-                <img
-                    src="https://img.icons8.com/color/48/000000/twitter--v1.png"
-                    alt="up"
-                />
-                </div>
-            </div>
-            <div className="controller-remote-buttons-item6">
-                <div className="controller-remote-buttons-img">
+//                 <img
+//                     src="https://img.icons8.com/color/48/000000/twitter--v1.png"
+//                     alt="up"
+//                 />
+//                 </div>
+//             </div>
+//             <div className="controller-remote-buttons-item6">
+//                 <div className="controller-remote-buttons-img">
 
-                <img
-                    src="https://visualpharm.com/assets/643/YouTube%202-595b40b85ba036ed117dae8f.svg"
-                    alt="up"
-                />
-                </div>
-            </div>
-            <div className="controller-remote-buttons-item7">
-                <div className="controller-remote-buttons-img">
+//                 <img
+//                     src="https://visualpharm.com/assets/643/YouTube%202-595b40b85ba036ed117dae8f.svg"
+//                     alt="up"
+//                 />
+//                 </div>
+//             </div>
+//             <div className="controller-remote-buttons-item7">
+//                 <div className="controller-remote-buttons-img">
 
-                <img
-                    src="https://visualpharm.com/assets/238/Globe%20Earth-595b40b65ba036ed117d13f8.svg"
-                    alt="up"
-                />
-                </div>
-            </div>
-        </div>
-    </div>
-)
+//                 <img
+//                     src="https://visualpharm.com/assets/238/Globe%20Earth-595b40b65ba036ed117d13f8.svg"
+//                     alt="up"
+//                 />
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// )
 
-const ContactRemote = () => (
-    <div className="controller-remote-contact">
-        <div className="controller-remote-contact-container">
-            <button>Contact </button>
-        </div>
-    </div>
-)
+// const ContactRemote = () => (
+//     <div className="controller-remote-contact">
+//         <div className="controller-remote-contact-container">
+//             <button>Contact </button>
+//         </div>
+//     </div>
+// )
 
 export default SideBarMenu;

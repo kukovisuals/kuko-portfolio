@@ -6,40 +6,60 @@
 // } from "react-router-dom";
 import "./App.scss";
 import { SideBarMenu } from "./components";
-import { useAppDispatch, useAppSelector } from "./Hook/Hook";
+import {  useAppSelector } from "./Hook/Hook";
 
 function App() {
     // const [direction, setDirection] = React.useState(0)
     const carouselDirection = useAppSelector((state) => state.counter.value);
     const carouselHorizontal = useAppSelector((state) => state.counter.horizontal);
     const moveCarousel = {
-        transform: `translate(${carouselHorizontal}px ,${-300 + carouselDirection}px)`
+        transform: `translate(${carouselHorizontal}px ,${carouselDirection}px)`
     };
 
     // console.log(carouselDirection)
     return (
         <div className="App">
+            <div className="controller-remote-buttons-item1">
+                <div className="controller-remote-buttons-img">
 
-            <SideBarMenu />
-            <div className="controller-carusel" style={moveCarousel}>
-                <div className="controller-carusel-grid">
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko-000067.png" />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko08-1169.jpg" />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko08-1325.jpg" />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko7-0231.jpg " />
-
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko10-1698.jpg" />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko10-2885.jpg" />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko10-1698.jpg" />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko09-1631.jpg" />
-
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko4-00320.jpg " />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/voronoi-00044.jpg" />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko5-00249.png" />
-                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko6-00174.png" />
+                <img
+                    src="https://visualpharm.com/assets/400/Modern%20Art-595b40b75ba036ed117d867c.svg"
+                    alt="up"
+                />
                 </div>
             </div>
+            <div className="controller-remote-buttons-item2">
+                <div className="controller-remote-buttons-img">
 
+                <img
+                    src="https://visualpharm.com/assets/951/Web%20Design-595b40b75ba036ed117d6dd6.svg"
+                    alt="up"
+                />
+                </div>
+            </div>
+            <div className="controller-remote-buttons-item3">
+                <div className="controller-remote-buttons-img">
+
+                <img
+                    src="https://visualpharm.com/assets/818/List%202-595b40b65ba036ed117d2f25.svg"
+                    alt="up"
+                />
+                </div>
+            </div>
+            <div className="controller-remote-buttons-item4">
+                <div className="controller-remote-buttons-img">
+
+                <img
+                    src="https://visualpharm.com/assets/787/Github-595b40b75ba036ed117d609e.svg"
+                    alt="up"
+                />
+                </div>
+            </div>
+            <div className="controller-carusel" style={moveCarousel}>
+                    <ArtImage pagina="https://kukoart.s3.amazonaws.com/kuko-000067.png" />
+            </div>
+
+            <SideBarMenu />
 
             <div className="controller-hide">
             </div>
