@@ -10,10 +10,6 @@ body {
     font-size: 12px;
 }
 
-
-
-
-
 .App {
     display: grid;
     grid-template: repeat(11, 1fr) / repeat(5, 1fr);
@@ -32,10 +28,9 @@ body {
     transform: translate(-50%, 20%);
 }
 
-@mixin buttons-shadow{
+@mixin buttons-shadow {
     background: linear-gradient(145deg, #ffffff, #dadada);
-box-shadow:  16px 16px 38px #616161,
-             -16px -16px 38px #ffffff;
+    box-shadow: 16px 16px 38px #616161, -16px -16px 38px #ffffff;
 }
 
 @mixin controllerimg {
@@ -54,10 +49,17 @@ box-shadow:  16px 16px 38px #616161,
     }
 }
 
-@mixin display-shadow{
-   background: linear-gradient(145deg, #ffffff, #dadada);
-box-shadow:  42px 42px 84px #6f6f6f,
-             -42px -42px 84px #ffffff; 
+@mixin controllerimg-mobile {
+    .controller-remote-buttons-img {
+        // border: 1px solid black;
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+@mixin display-shadow {
+    background: linear-gradient(145deg, #ffffff, #dadada);
+    box-shadow: 42px 42px 84px #6f6f6f, -42px -42px 84px #ffffff;
 }
 
 .controller-carusel {
@@ -72,9 +74,9 @@ box-shadow:  42px 42px 84px #6f6f6f,
         position: absolute;
         left: 50%;
         right: 50%;
-            transform: translate(-49.5%, 1.4%);
-    width: 98%;
-    border-radius: 50%;
+        transform: translate(-49.5%, 1.4%);
+        width: 98%;
+        border-radius: 50%;
     }
 }
 
@@ -96,4 +98,38 @@ box-shadow:  42px 42px 84px #6f6f6f,
 .controller-remote-buttons-item4 {
     grid-area: 5/1 / 6/2;
     @include controllerimg;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+    .App {
+        gap: 0;
+        margin-left: 0;
+    }
+    .controller-carusel {
+        width: 20rem;
+        height: 20rem;
+    }
+    .controller-dark-theme {
+        grid-area: 9/2/10/3;
+    }
+    .controller-remote-buttons-item1 {
+        grid-area: 2/2 / 3/3;
+        @include controllerimg-mobile;
+    }
+    .controller-remote-buttons-item2 {
+        padding-left: 1rem;
+        grid-area: 3/1 / 4/2;
+        @include controllerimg-mobile;
+    }
+    .controller-remote-buttons-item3 {
+        grid-area: 4/1 / 5/3;
+        @include controllerimg-mobile;
+    }
+    .controller-remote-buttons-item4 {
+        grid-area: 5/1 / 6/2;
+        @include controllerimg-mobile;
+    }
 }
