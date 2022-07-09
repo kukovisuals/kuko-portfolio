@@ -61,12 +61,10 @@
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
+
   .App{
     gap:0;
-    margin-left: 0;
+    margin: 0;
   }
   .controller-carusel{
    width: 15rem;

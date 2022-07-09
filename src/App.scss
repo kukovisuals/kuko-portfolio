@@ -101,19 +101,17 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
+
     .App {
         gap: 0;
-        padding-left: 5rem;
     }
     .controller-carusel {
+        grid-area: 5/2/9/5;
         width: 20rem;
         height: 20rem;
     }
     .controller-dark-theme {
-        grid-area: 9/2/10/3;
+        grid-area: 9/1/10/2;
     }
     .controller-remote-buttons-item1 {
         grid-area: 2/2 / 3/3;
