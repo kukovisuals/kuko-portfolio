@@ -24,7 +24,7 @@ function App() {
             <div className="controller-remote-buttons-item1">
                 <div className="controller-remote-buttons-img active">
                     <img
-                        src="https://visualpharm.com/assets/400/Modern%20Art-595b40b75ba036ed117d867c.svg"
+                        src="https://visualpharm.com/assets/30/Brush-595b40b85ba036ed117daf66.svg"
                         alt="up"
                     />
                 </div>
@@ -32,7 +32,7 @@ function App() {
             <div className="controller-remote-buttons-item2">
                 <div className="controller-remote-buttons-img">
                     <img
-                        src="https://visualpharm.com/assets/951/Web%20Design-595b40b75ba036ed117d6dd6.svg"
+                        src="https://visualpharm.com/assets/879/Website-595b40b65ba036ed117d08d6.svg"
                         alt="up"
                     />
                 </div>
@@ -40,7 +40,7 @@ function App() {
             <div className="controller-remote-buttons-item3">
                 <div className="controller-remote-buttons-img">
                     <img
-                        src="https://visualpharm.com/assets/818/List%202-595b40b65ba036ed117d2f25.svg"
+                        src="https://visualpharm.com/assets/110/Worker-595b40b85ba036ed117db970.svg"
                         alt="up"
                     />
                 </div>
@@ -48,7 +48,7 @@ function App() {
             <div className="controller-remote-buttons-item4">
                 <div className="controller-remote-buttons-img">
                     <img
-                        src="https://visualpharm.com/assets/787/Github-595b40b75ba036ed117d609e.svg"
+                        src="https://visualpharm.com/assets/981/Email-595b40b75ba036ed117d5da9.svg"
                         alt="up"
                     />
                 </div>

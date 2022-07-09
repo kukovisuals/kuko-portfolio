@@ -30,7 +30,7 @@ body {
 
 @mixin buttons-shadow {
     background: linear-gradient(145deg, #ffffff, #dadada);
-    box-shadow: 16px 16px 38px #616161, -16px -16px 38px #ffffff;
+box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
 }
 
 @mixin controllerimg {
@@ -49,7 +49,8 @@ body {
         }
     }
     .active{
-   box-shadow: 4px 2px 46px 20px #3d6fc9, -20px -2px 84px 8px #ffffff;
+        
+        background: rgb(11 78 201 / 27%);
         }
 }
 
