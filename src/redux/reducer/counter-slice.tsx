@@ -14,50 +14,47 @@ const initialState: CounterState = {
 }
 
 const move = 400;
-const moveLeft = 550;
+const moveLeft = 1;
 
 export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
         up(state:any){
-            if(state.value >= 400){
-                state.value = -550
+            if(state.value > 11){
+                state.value = 0
             } else {
                 state.value += moveLeft
             }
             console.log(state.value)
         },
         down(state:any){
-            if(state.value <= -550 ){
-                state.value = 400
+            if(state.value === 0 ){
+                state.value = 11
             } else {
                 state.value -= moveLeft
             }
             console.log(state.value)
         },
         left(state:any){
-            if(state.horizontal === 0){
-                state.horizontal = -1650
+            if(state.value >= 11){
+                state.value = 0
             } else {
-                state.horizontal += moveLeft
+                state.value += moveLeft
             }
-            console.log(state.horizontal)
+            console.log(state.value)
         },
         right(state:any){
-            if(state.horizontal <= -1650){
-                state.horizontal = 0
+            if(state.value === 0){
+                state.value = 11
             } else {
-                state.horizontal -= moveLeft
+                state.value -= moveLeft
             }
-            console.log(state.horizontal)
-        },
-        amountAdded(state:any, action: PayloadAction<string>){
-            state.education = action.payload
+            console.log(state.value)
         },
     },
 })
 
 
-export const {down, up, left, right, amountAdded} = counterSlice.actions
+export const {down, up, left, right} = counterSlice.actions
 export default counterSlice.reducer

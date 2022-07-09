@@ -1,0 +1,21 @@
+{
+  "Gallery": "kuko",
+  "art": {
+    "shaders": [
+      "https://kukoart.s3.amazonaws.com/kuko-000067.png",
+      "https://kukoart.s3.amazonaws.com/kuko08-1169.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko08-1325.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko7-0231.jpg",
+
+      "https://kukoart.s3.amazonaws.com/kuko10-1698.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko10-2885.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko10-1698.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko09-1631.jpg",
+
+      "https://kukoart.s3.amazonaws.com/kuko4-00320.jpg ",
+      "https://kukoart.s3.amazonaws.com/voronoi-00044.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko5-00249.png",
+      "https://kukoart.s3.amazonaws.com/kuko6-00174.png"
+    ]
+  }
+}
