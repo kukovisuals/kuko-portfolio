@@ -22,7 +22,7 @@ function App() {
     return (
         <div className="App">
             <div className="controller-remote-buttons-item1">
-                <div className="controller-remote-buttons-img">
+                <div className="controller-remote-buttons-img active">
                     <img
                         src="https://visualpharm.com/assets/400/Modern%20Art-595b40b75ba036ed117d867c.svg"
                         alt="up"

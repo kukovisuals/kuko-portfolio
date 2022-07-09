@@ -42,11 +42,15 @@ body {
         @include buttons-shadow;
         position: relative;
 
+        
         img {
             @include center-img;
             width: 70%;
         }
     }
+    .active{
+              box-shadow: 4px 2px 20px 12px #a4c4ff, -20px -2px 84px 8px #ffffff;
+        }
 }
 
 @mixin controllerimg-mobile {
