@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-// import rootReducer from "./reducers";
+import { createSlice} from '@reduxjs/toolkit';
+// import rootReducer from "./reducers"; PayloadAction
 
 export interface CounterState {
     education: string;
@@ -13,7 +13,7 @@ const initialState: CounterState = {
     horizontal: 0
 }
 
-const move = 400;
+// const move = 400;
 const moveLeft = 1;
 
 export const counterSlice = createSlice({

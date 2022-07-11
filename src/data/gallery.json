@@ -17,5 +17,28 @@
       "https://kukoart.s3.amazonaws.com/kuko5-00249.png",
       "https://kukoart.s3.amazonaws.com/kuko6-00174.png"
     ]
+  },
+  "work": {
+    "shaders": [
+      "https://kuko-work.s3.amazonaws.com/five-m+software.jpg",
+      "https://kuko-work.s3.amazonaws.com/hall+of+fame.jpg",
+      "https://kuko-work.s3.amazonaws.com/needscollective.jpg"
+    ]
+  },
+  "project": {
+    "shaders": [
+      "https://kukoart.s3.amazonaws.com/kuko-000067.png",
+      "https://kukoart.s3.amazonaws.com/kuko08-1169.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko08-1325.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko7-0231.jpg"
+    ]
+  },
+  "contact": {
+    "shaders": [
+      "https://kukoart.s3.amazonaws.com/kuko-000067.png",
+      "https://kukoart.s3.amazonaws.com/kuko08-1169.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko08-1325.jpg",
+      "https://kukoart.s3.amazonaws.com/kuko7-0231.jpg"
+    ]
   }
 }
