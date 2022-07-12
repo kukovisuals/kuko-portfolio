@@ -5,7 +5,7 @@ import kuko from "../../data/gallery.json";
 export interface CounterState {
     education: string;
     value: number;
-    horizontal: number;
+    buttonMenu: number;
 }
 
 export interface controllerState {
@@ -18,7 +18,7 @@ export interface controllerState {
 const initialState: CounterState = {
     education: '',
     value: 0,
-    horizontal: 0
+    buttonMenu: 0
 }
 
 const moveLeft = 1;
@@ -48,19 +48,17 @@ const galleryChosen = (data: controllerState): number => {
 
 }
 
-const numberButtons = 4
+const numberButtons = 3
 
 export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        up(state:any, actions: PayloadAction<controllerState> ){
-            const carouselSize = galleryChosen(actions.payload)
-            state.value = (state.value > 0) && (state.value % carouselSize === 0) ? 0 : state.value + moveLeft
+        up(state:any ){
+            state.buttonMenu = (state.buttonMenu === 0) ? numberButtons : state.buttonMenu - 1
         },
-        down(state:any, actions: PayloadAction<controllerState> ){
-            const carouselSize = galleryChosen(actions.payload)
-            state.value = (state.value === 0) ? carouselSize : state.value - moveLeft
+        down(state:any ){
+            state.buttonMenu = (state.buttonMenu > 0) && (state.buttonMenu % numberButtons === 0) ? 0 : state.buttonMenu + 1
         },
         left(state:any , actions: PayloadAction<controllerState> ){
             const carouselSize = galleryChosen(actions.payload)

@@ -15,8 +15,10 @@ import { workLinks, projectLinks, contactLinks } from "./data/linksWork";
 
 function App() {
     const [displaySelection, setDisplaySelection] = React.useState('Art')
+    const [chooseButton, setChooseButton] = React.useState(['art', 'work','project', 'contact'])
 
     const carouselDirection = useAppSelector((state) => state.counter.value);
+    const buttonIndex = useAppSelector((state) => state.counter.buttonMenu);
 
     const controllerArt = useAppSelector((state) => state.controller);
 
@@ -27,9 +29,8 @@ function App() {
     const project = kuko.project["shaders"];
     const contact = kuko.contact["shaders"];
 
-    const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
-        const chosenDiv = event.currentTarget.id;
-        switch (chosenDiv) {
+    const dispatchButtonAction = (data: any) =>{
+        switch (data) {
             case "art":
                 dispatch(artButton());
                 dispatch(restart());
@@ -53,8 +54,20 @@ function App() {
             default:
                 throw new Error("Something went wrong");
         }
+    }
+
+    const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
+        const chosenDiv = event.currentTarget.id;
+        dispatchButtonAction(chosenDiv)
     };
-    // console.log( project, contact);
+
+    React.useLayoutEffect(() =>{
+
+        dispatchButtonAction(chooseButton[buttonIndex]);
+    },[buttonIndex])
+
+    
+    // console.log(  buttonIndex);
 
     const DisplayArt = () => {
         return (
@@ -95,7 +108,7 @@ function App() {
     const activeProject = controllerArt.project ? "active-project" : "";
     const activeContact = controllerArt.contact ? "active-contact" : "";
 
-    console.log(activeArt);
+    // console.log(activeArt);
     return (
         <div className="App">
             <div
@@ -173,7 +186,7 @@ interface PageProp {
 }
 
 const ArtImage = (props: PageProp) => {
-    console.log(props.displayLink);
+    // console.log(props.displayLink);
     return (
         <div className="controller-carusel-items">
             <div className="controller-carusel-image">

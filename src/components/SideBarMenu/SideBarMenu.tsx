@@ -27,11 +27,11 @@ const ArrowsRemote = () => {
         switch (name) {
             case "up":
             case 38:
-                dispatch(up(carouselDirection));
+                dispatch(up());
                 break;
             case "down":
             case 40:
-                dispatch(down(carouselDirection));
+                dispatch(down());
                 break;
             case "left":
             case 37:
