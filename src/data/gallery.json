@@ -27,18 +27,17 @@
   },
   "project": {
     "shaders": [
-      "https://kukoart.s3.amazonaws.com/kuko-000067.png",
-      "https://kukoart.s3.amazonaws.com/kuko08-1169.jpg",
-      "https://kukoart.s3.amazonaws.com/kuko08-1325.jpg",
-      "https://kukoart.s3.amazonaws.com/kuko7-0231.jpg"
+      "https://kuko-project.s3.amazonaws.com/graph+visuals.jpg",
+      "https://kuko-project.s3.amazonaws.com/grid+helper.jpg",
+      "https://kuko-project.s3.amazonaws.com/NFT+visuals.jpg",
+      "https://kuko-project.s3.amazonaws.com/web+scraper.jpg"
     ]
   },
   "contact": {
     "shaders": [
-      "https://kukoart.s3.amazonaws.com/kuko-000067.png",
-      "https://kukoart.s3.amazonaws.com/kuko08-1169.jpg",
-      "https://kukoart.s3.amazonaws.com/kuko08-1325.jpg",
-      "https://kukoart.s3.amazonaws.com/kuko7-0231.jpg"
+      "https://kuko-contact.s3.amazonaws.com/github.jpg",
+      "https://kuko-contact.s3.amazonaws.com/twitter.jpg",
+      "https://kuko-contact.s3.amazonaws.com/youtube.jpg"
     ]
   }
 }

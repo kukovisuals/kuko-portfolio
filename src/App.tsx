@@ -1,10 +1,4 @@
-import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
-import "./App.scss";
+import React from "react";import "./App.scss";
 import { SideBarMenu } from "./components";
 import { useAppSelector, useAppDispatch } from "./Hook/Hook";
 import {
@@ -13,38 +7,39 @@ import {
     projectButton,
     contactButton,
 } from "./redux/reducer/controller-slice";
+import { restart } from "./redux/reducer/counter-slice";
 import kuko from "./data/gallery.json";
 
 function App() {
     const carouselDirection = useAppSelector((state) => state.counter.value);
-    // const carouselHorizontal = useAppSelector(
-    //     (state) => state.counter.horizontal
-    // );
+ 
     const controllerArt = useAppSelector((state) => state.controller);
 
     const dispatch = useAppDispatch();
 
     const art = kuko.art["shaders"];
     const work = kuko.work["shaders"];
-    // const project = kuko.project["shaders"];
-    // const contact = kuko.contact["shaders"];
-
-    const moveCarousel = {};
+    const project = kuko.project["shaders"];
+    const contact = kuko.contact["shaders"];
 
     const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
         const chosenDiv = event.currentTarget.id;
         switch (chosenDiv) {
             case "art":
                 dispatch(artButton());
+                dispatch(restart());
                 break;
             case "work":
                 dispatch(workButton());
+                dispatch(restart());
                 break;
             case "project":
                 dispatch(projectButton());
+                dispatch(restart());
                 break;
             case "contact":
                 dispatch(contactButton());
+                dispatch(restart());
                 break;
             default:
                 throw new Error("Something went wrong");
@@ -69,20 +64,28 @@ function App() {
                 )}
                 {controllerArt.project && (
                     <ArtImage
-                        key={work[carouselDirection]}
-                        pagina={work[carouselDirection]}
+                        key={project[carouselDirection]}
+                        pagina={project[carouselDirection]}
                     />
                 )}
                 {controllerArt.contact && (
                     <ArtImage
-                        key={work[carouselDirection]}
-                        pagina={work[carouselDirection]}
+                        key={contact[carouselDirection]}
+                        pagina={contact[carouselDirection]}
                     />
                 )}
 
             </>
         );
     };
+
+
+    const activeArt = controllerArt.art ? 'active' : ''
+    const activeWork = controllerArt.work ? 'active' : ''
+    const activeProject = controllerArt.project ? 'active' : ''
+    const activeContact = controllerArt.contact ? 'active' : ''
+
+    console.log(activeArt)
     return (
         <div className="App">
             <div
@@ -90,7 +93,7 @@ function App() {
                 id="art"
                 onClick={handleClick}
             >
-                <div className="controller-remote-buttons-img active">
+                <div className={`controller-remote-buttons-img ${activeArt}`}>
                     <img
                         src="https://visualpharm.com/assets/30/Brush-595b40b85ba036ed117daf66.svg"
                         alt="art"
@@ -102,7 +105,7 @@ function App() {
                 id="work"
                 onClick={handleClick}
             >
-                <div className="controller-remote-buttons-img">
+                <div className={`controller-remote-buttons-img ${activeWork}`}>
                     <img
                         src="https://visualpharm.com/assets/879/Website-595b40b65ba036ed117d08d6.svg"
                         alt="up"
@@ -114,7 +117,7 @@ function App() {
                 id="project"
                 onClick={handleClick}
             >
-                <div className="controller-remote-buttons-img">
+                <div className={`controller-remote-buttons-img ${activeProject}`}>
                     <img
                         src="https://visualpharm.com/assets/110/Worker-595b40b85ba036ed117db970.svg"
                         alt="up"
@@ -126,14 +129,14 @@ function App() {
                 id="contact"
                 onClick={handleClick}
             >
-                <div className="controller-remote-buttons-img">
+                <div className={`controller-remote-buttons-img ${activeContact}`}>
                     <img
                         src="https://visualpharm.com/assets/981/Email-595b40b75ba036ed117d5da9.svg"
                         alt="up"
                     />
                 </div>
             </div>
-            <div className="controller-carusel" style={moveCarousel}>
+            <div className="controller-carusel" >
                 <DisplayArt/>
             </div>
 
@@ -148,11 +151,14 @@ interface PageProp {
     pagina: string;
 }
 
-const ArtImage = (props: PageProp) => (
-    <div className="controller-carusel-items">
-        <div className="controller-carusel-image">
-            <img src={props.pagina} alt="kukoart" />
+const ArtImage = (props: PageProp) => {
+     console.log(props.pagina)
+     return(
+        <div className="controller-carusel-items">
+            <div className="controller-carusel-image">
+                <img src={props.pagina} alt="kukoart" />
+            </div>
         </div>
-    </div>
-);
+    )
+};
 export default App;
