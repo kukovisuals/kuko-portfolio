@@ -48,6 +48,8 @@ const galleryChosen = (data: controllerState): number => {
 
 }
 
+const numberButtons = 4
+
 export const counterSlice = createSlice({
     name: 'counter',
     initialState,
