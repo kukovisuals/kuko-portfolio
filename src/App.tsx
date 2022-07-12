@@ -1,4 +1,5 @@
-import React from "react";import "./App.scss";
+import React from "react";
+import "./App.scss";
 import { SideBarMenu } from "./components";
 import { useAppSelector, useAppDispatch } from "./Hook/Hook";
 import {
@@ -10,12 +11,13 @@ import {
 import { restart } from "./redux/reducer/counter-slice";
 import kuko from "./data/gallery.json";
 
-import {workLinks, projectLinks, contactLinks} from './data/linksWork';
-
+import { workLinks, projectLinks, contactLinks } from "./data/linksWork";
 
 function App() {
+    const [displaySelection, setDisplaySelection] = React.useState('Art')
+
     const carouselDirection = useAppSelector((state) => state.counter.value);
- 
+
     const controllerArt = useAppSelector((state) => state.controller);
 
     const dispatch = useAppDispatch();
@@ -31,18 +33,22 @@ function App() {
             case "art":
                 dispatch(artButton());
                 dispatch(restart());
+                setDisplaySelection('Art')
                 break;
             case "work":
                 dispatch(workButton());
                 dispatch(restart());
+                setDisplaySelection('Work')
                 break;
             case "project":
                 dispatch(projectButton());
                 dispatch(restart());
+                setDisplaySelection('Projects')
                 break;
             case "contact":
                 dispatch(contactButton());
                 dispatch(restart());
+                setDisplaySelection('Contact')
                 break;
             default:
                 throw new Error("Something went wrong");
@@ -80,18 +86,16 @@ function App() {
                         pagina={contact[carouselDirection]}
                     />
                 )}
-
             </>
         );
     };
 
+    const activeArt = controllerArt.art ? "active-art" : "";
+    const activeWork = controllerArt.work ? "active-work" : "";
+    const activeProject = controllerArt.project ? "active-project" : "";
+    const activeContact = controllerArt.contact ? "active-contact" : "";
 
-    const activeArt = controllerArt.art ? 'active-art' : ''
-    const activeWork = controllerArt.work ? 'active-work' : ''
-    const activeProject = controllerArt.project ? 'active-project' : ''
-    const activeContact = controllerArt.contact ? 'active-contact' : ''
-
-    console.log(activeArt)
+    console.log(activeArt);
     return (
         <div className="App">
             <div
@@ -123,7 +127,9 @@ function App() {
                 id="project"
                 onClick={handleClick}
             >
-                <div className={`controller-remote-buttons-img ${activeProject}`}>
+                <div
+                    className={`controller-remote-buttons-img ${activeProject}`}
+                >
                     <img
                         src="https://visualpharm.com/assets/110/Worker-595b40b85ba036ed117db970.svg"
                         alt="up"
@@ -135,15 +141,23 @@ function App() {
                 id="contact"
                 onClick={handleClick}
             >
-                <div className={`controller-remote-buttons-img ${activeContact}`}>
+                <div
+                    className={`controller-remote-buttons-img ${activeContact}`}
+                >
                     <img
                         src="https://visualpharm.com/assets/981/Email-595b40b75ba036ed117d5da9.svg"
                         alt="up"
                     />
                 </div>
             </div>
-            <div className="controller-carusel" >
-                <DisplayArt/>
+
+            <div className="controller-carusel-description">
+                <div className="controller-carusel-description-container">
+                    <span>{displaySelection}</span>
+                </div>
+            </div>
+            <div className="controller-carusel">
+                <DisplayArt />
             </div>
 
             <SideBarMenu />
@@ -159,8 +173,8 @@ interface PageProp {
 }
 
 const ArtImage = (props: PageProp) => {
-     console.log(props.displayLink)
-     return(
+    console.log(props.displayLink);
+    return (
         <div className="controller-carusel-items">
             <div className="controller-carusel-image">
                 <a href={props.displayLink}>
@@ -168,6 +182,6 @@ const ArtImage = (props: PageProp) => {
                 </a>
             </div>
         </div>
-    )
+    );
 };
 export default App;

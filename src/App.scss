@@ -1,5 +1,5 @@
 @use "./utilities/variablesStyle.scss" as c;
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -30,13 +30,11 @@ body {
 
 @mixin buttons-shadow {
     background: linear-gradient(145deg, #ffffff, #dadada);
-box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
+    box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
 }
 
-
-@mixin icon-invert{
-    img{
-
+@mixin icon-invert {
+    img {
         filter: invert(100%);
     }
 }
@@ -51,29 +49,28 @@ box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
         @include buttons-shadow;
         position: relative;
 
-        
         img {
             @include center-img;
             width: 70%;
         }
     }
-    .active-art{
+    .active-art {
         background: #0014ff;
         @include icon-invert;
     }
-    .active-work{
-        background: #09BA87;
-        
+    .active-work {
+        background: #09ba87;
+
         @include icon-invert;
     }
-    .active-project{
-        background: #FF0DBF;
-        
+    .active-project {
+        background: #ff0dbf;
+
         @include icon-invert;
     }
-    .active-contact{
-        background: #FFC900;
-        
+    .active-contact {
+        background: #ffc900;
+
         @include icon-invert;
     }
 }
@@ -98,8 +95,8 @@ box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
     height: 30rem;
     border-radius: 50%;
     @include display-shadow;
-
     position: relative;
+
     img {
         position: absolute;
         left: 50%;
@@ -130,8 +127,32 @@ box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
     @include controllerimg;
 }
 
-@media only screen and (max-width: 600px) {
 
+
+   .controller-carusel-description {
+        
+         grid-area: 7/2 / 8/3;
+            border: 4px solid #d9d9d9;
+        width:100%;
+        // box-shadow:2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
+
+        .controller-carusel-description-container{
+            position: relative;
+            
+            span{
+                position:absolute;
+                left: 50%;
+                transform: translate(-50%, 25%);
+                font-size: 1.5rem;
+                text-align:center;
+                font-family: 'Caveat', cursive;
+
+            }
+        }
+    }
+
+
+@media only screen and (max-width: 600px) {
     .App {
         gap: 0;
     }
