@@ -20,17 +20,17 @@
   },
   "work": {
     "shaders": [
-      "https://kuko-work.s3.amazonaws.com/five-m+software.jpg",
-      "https://kuko-work.s3.amazonaws.com/hall+of+fame.jpg",
-      "https://kuko-work.s3.amazonaws.com/needscollective.jpg"
+      "https://kuko-work.s3.amazonaws.com/needs+collective.jpg",
+      "https://kuko-work.s3.amazonaws.com/fivem.jpg",
+      "https://kuko-work.s3.amazonaws.com/hall+of+fame.jpg"
     ]
   },
   "project": {
     "shaders": [
-      "https://kuko-project.s3.amazonaws.com/graph+visuals.jpg",
-      "https://kuko-project.s3.amazonaws.com/grid+helper.jpg",
-      "https://kuko-project.s3.amazonaws.com/NFT+visuals.jpg",
-      "https://kuko-project.s3.amazonaws.com/web+scraper.jpg"
+      "https://kuko-project.s3.amazonaws.com/CSV+visuals+d3js.jpg",
+      "https://kuko-project.s3.amazonaws.com/grid+Css+helper.jpg",
+      "https://kuko-project.s3.amazonaws.com/Invisible+friend+NFT+visuals.jpg",
+      "https://kuko-project.s3.amazonaws.com/web+scraper+python.jpg"
     ]
   },
   "contact": {

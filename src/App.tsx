@@ -10,6 +10,9 @@ import {
 import { restart } from "./redux/reducer/counter-slice";
 import kuko from "./data/gallery.json";
 
+import {workLinks, projectLinks, contactLinks} from './data/linksWork';
+
+
 function App() {
     const carouselDirection = useAppSelector((state) => state.counter.value);
  
@@ -58,18 +61,21 @@ function App() {
                 )}
                 {controllerArt.work && (
                     <ArtImage
+                        displayLink={workLinks[carouselDirection]}
                         key={work[carouselDirection]}
                         pagina={work[carouselDirection]}
                     />
                 )}
                 {controllerArt.project && (
                     <ArtImage
+                        displayLink={projectLinks[carouselDirection]}
                         key={project[carouselDirection]}
                         pagina={project[carouselDirection]}
                     />
                 )}
                 {controllerArt.contact && (
                     <ArtImage
+                        displayLink={contactLinks[carouselDirection]}
                         key={contact[carouselDirection]}
                         pagina={contact[carouselDirection]}
                     />
@@ -80,10 +86,10 @@ function App() {
     };
 
 
-    const activeArt = controllerArt.art ? 'active' : ''
-    const activeWork = controllerArt.work ? 'active' : ''
-    const activeProject = controllerArt.project ? 'active' : ''
-    const activeContact = controllerArt.contact ? 'active' : ''
+    const activeArt = controllerArt.art ? 'active-art' : ''
+    const activeWork = controllerArt.work ? 'active-work' : ''
+    const activeProject = controllerArt.project ? 'active-project' : ''
+    const activeContact = controllerArt.contact ? 'active-contact' : ''
 
     console.log(activeArt)
     return (
@@ -149,14 +155,17 @@ function App() {
 
 interface PageProp {
     pagina: string;
+    displayLink?: string;
 }
 
 const ArtImage = (props: PageProp) => {
-     console.log(props.pagina)
+     console.log(props.displayLink)
      return(
         <div className="controller-carusel-items">
             <div className="controller-carusel-image">
-                <img src={props.pagina} alt="kukoart" />
+                <a href={props.displayLink}>
+                    <img src={props.pagina} alt="kukoart" />
+                </a>
             </div>
         </div>
     )

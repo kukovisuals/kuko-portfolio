@@ -33,6 +33,14 @@ body {
 box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
 }
 
+
+@mixin icon-invert{
+    img{
+
+        filter: invert(100%);
+    }
+}
+
 @mixin controllerimg {
     cursor: pointer;
     .controller-remote-buttons-img {
@@ -49,10 +57,25 @@ box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
             width: 70%;
         }
     }
-    .active{
+    .active-art{
+        background: #0014ff;
+        @include icon-invert;
+    }
+    .active-work{
+        background: #09BA87;
         
-        background: rgb(11 78 201 / 27%);
-        }
+        @include icon-invert;
+    }
+    .active-project{
+        background: #FF0DBF;
+        
+        @include icon-invert;
+    }
+    .active-contact{
+        background: #FFC900;
+        
+        @include icon-invert;
+    }
 }
 
 @mixin controllerimg-mobile {
