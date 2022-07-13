@@ -27,10 +27,12 @@
   },
   "project": {
     "shaders": [
-      "https://kuko-project.s3.amazonaws.com/CSV+visuals+d3js.jpg",
+      "https://kuko-project.s3.amazonaws.com/CSV+visuals+d3js+Graph.jpg",
       "https://kuko-project.s3.amazonaws.com/grid+Css+helper.jpg",
       "https://kuko-project.s3.amazonaws.com/Invisible+friend+NFT+visuals.jpg",
-      "https://kuko-project.s3.amazonaws.com/web+scraper+python.jpg"
+      "https://kuko-project.s3.amazonaws.com/web+scraper+python.jpg",
+      "https://kuko-project.s3.amazonaws.com/carousel+redux.jpg",
+      "https://kuko-project.s3.amazonaws.com/questionare+vuejs.jpg"
     ]
   },
   "contact": {

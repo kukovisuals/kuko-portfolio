@@ -56,6 +56,7 @@ const ArrowsRemote = () => {
         return () => document.removeEventListener("keydown", keyDownFucntion);
     }, [moveCarousel]);
 
+    console.log(carouselDirection)
     return (
         <div className="controller-remote-grid">
             <div className="controller-item1" id="up" onClick={handleClick}>

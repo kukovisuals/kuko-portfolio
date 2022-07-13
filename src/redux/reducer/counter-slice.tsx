@@ -28,6 +28,8 @@ const work = kuko.work["shaders"];
 const project = kuko.project["shaders"];
 const contact = kuko.contact["shaders"];
 
+console.log(project.length)
+
 const galleryChosen = (data: controllerState): number => {
     
     if(data.art){

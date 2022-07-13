@@ -11,7 +11,7 @@ import {
 import { restart } from "./redux/reducer/counter-slice";
 import kuko from "./data/gallery.json";
 
-import { workLinks, projectLinks, contactLinks } from "./data/linksWork";
+import { workLinks, projectLinks, contactLinks, artLinks } from "./data/linksWork";
 
 function App() {
     const [displaySelection, setDisplaySelection] = React.useState('Art')
@@ -67,13 +67,14 @@ function App() {
     },[buttonIndex])
 
     
-    // console.log(  buttonIndex);
+    console.log(  carouselDirection);
 
     const DisplayArt = () => {
         return (
             <>
                 {controllerArt.art && (
                     <ArtImage
+                        displayLink={artLinks[0]}
                         key={art[carouselDirection]}
                         pagina={art[carouselDirection]}
                     />
@@ -186,7 +187,7 @@ interface PageProp {
 }
 
 const ArtImage = (props: PageProp) => {
-    // console.log(props.displayLink);
+    console.log(props.displayLink);
     return (
         <div className="controller-carusel-items">
             <div className="controller-carusel-image">
