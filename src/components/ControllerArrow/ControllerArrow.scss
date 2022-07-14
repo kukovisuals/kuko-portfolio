@@ -1,0 +1,82 @@
+@mixin arrows-img {
+    cursor: pointer;
+
+    div {
+        position: relative;
+        img {
+            width: 37%;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 75%);
+        }
+    }
+}
+
+@mixin arrows-shadow {
+    background: #f2f2f2;
+    box-shadow: inset 29px 29px 57px #d5d5d5, inset -20px -17px 57px #ffffff;
+}
+
+@mixin arrows-center {
+    background: linear-gradient(145deg, #ffffff, #dadada);
+       box-shadow: 2px 6px 34px #bdbdbd, -17px -17px 34px #ffffff;
+}
+
+.controller-remote-grid {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+
+    width: 10rem;
+    height: 10rem;
+
+    @include arrows-shadow;
+    border-radius: 100%;
+
+    .controller-item1 {
+        grid-area: 1/2 / 1/3;
+
+        // border-top: 1px solid black;
+        @include arrows-img;
+    }
+    .controller-item2 {
+        grid-area: 2/1 / 2/2;
+
+        // border: 1px solid black;
+        @include arrows-img;
+    }
+    .controller-item3 {
+        grid-area: 2/2 / 2/3;
+
+        // border: 1px solid black;
+        @include arrows-center;
+
+        border-radius: 100%;
+        height: 3rem;
+        width: 3rem;
+    }
+    .controller-item4 {
+        grid-area: 2/3 / 2/4;
+
+        // border: 1px solid black;
+        @include arrows-img;
+    }
+    .controller-item5 {
+        grid-area: 3/2 / 3/3;
+        // border-bottom: 1px solid black;
+        @include arrows-img;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .App{
+    gap:0;
+    margin: 0;
+  }
+  .controller-carusel{
+   width: 15rem;
+    height: 15rem;
+
+  }
+}

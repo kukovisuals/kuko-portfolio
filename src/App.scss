@@ -1,73 +1,4 @@
 @use "./utilities/variablesStyle.scss" as c;
-@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
-
-@mixin center-img {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 20%);
-}
-
-@mixin buttons-shadow {
-    background: linear-gradient(145deg, #ffffff, #dadada);
-    box-shadow: 2px 3px 27px 2px #bfbdbd, -16px -16px 38px #ffffff;
-}
-
-@mixin icon-invert {
-    img {
-        filter: invert(100%);
-    }
-}
-
-@mixin controllerimg {
-    cursor: pointer;
-    .controller-remote-buttons-img {
-        // border: 1px solid black;
-        width: 5rem;
-        height: 5rem;
-        border-radius: 150px;
-        @include buttons-shadow;
-        position: relative;
-
-        img {
-            @include center-img;
-            width: 70%;
-        }
-    }
-    .active-art {
-        background: #0014ff;
-        @include icon-invert;
-    }
-    .active-work {
-        background: #09ba87;
-
-        @include icon-invert;
-    }
-    .active-project {
-        background: #ff0dbf;
-
-        @include icon-invert;
-    }
-    .active-contact {
-        background: #ffc900;
-
-        @include icon-invert;
-    }
-}
-
-@mixin controllerimg-mobile {
-    cursor: pointer;
-    .controller-remote-buttons-img {
-        // border: 1px solid black;
-        width: 3rem;
-        height: 3rem;
-    }
-}
-
-@mixin display-shadow {
-    background: linear-gradient(145deg, #ffffff, #dadada);
-    box-shadow: 20px 20px 72px #939393, -42px -42px 84px #ffffff;
-}
 
 * {
     margin: 0;
@@ -89,66 +20,8 @@ body {
     gap: 2rem;
     margin-left: 2rem;
 
-    .controller-carusel-description {
-        grid-area: 7/2 / 8/3;
-        border: 4px solid #d9d9d9;
-        width: 100%;
-        max-width:125px;
-        justify-self: end;
-
-        .controller-carusel-description-container {
-            position: relative;
-
-            span {
-                position: absolute;
-                left: 50%;
-                transform: translate(-50%, 25%);
-                font-size: 1.5rem;
-                text-align: center;
-                font-family: "Caveat", cursive;
-            }
-        }
-    }
+  
 }
-
-.controller-carusel {
-    grid-area: 3/3 / 9/5;
-    width: 30rem;
-    height: 30rem;
-    border-radius: 50%;
-    @include display-shadow;
-    position: relative;
-
-    img {
-        position: absolute;
-        left: 50%;
-        right: 50%;
-        transform: translate(-49.5%, 1.4%);
-        width: 98%;
-        border-radius: 50%;
-    }
-}
-
-.controller-dark-theme {
-    grid-area: 9/1 / 10/2;
-}
-.controller-remote-buttons-item1 {
-    grid-area: 2/2 / 3/3;
-    @include controllerimg;
-}
-.controller-remote-buttons-item2 {
-    grid-area: 3/1 / 4/2;
-    @include controllerimg;
-}
-.controller-remote-buttons-item3 {
-    grid-area: 4/1 / 5/3;
-    @include controllerimg;
-}
-.controller-remote-buttons-item4 {
-    grid-area: 5/1 / 6/2;
-    @include controllerimg;
-}
-
 
 
 
@@ -156,42 +29,6 @@ body {
     .App {
         gap: 0;
 
-        .controller-carusel-description {
-            grid-area: 8/1 / 8/2;
-            width: 50%;
-            height: 50%;
+    }
 
-            .controller-carusel-description-container{
-
-                span {
-                    transform: translate(-50%, 6%);
-                }
-            }
-        }
-    }
-    .controller-carusel {
-        grid-area: 5/2/9/5;
-        width: 20rem;
-        height: 20rem;
-    }
-    .controller-dark-theme {
-        grid-area: 9/1/10/2;
-    }
-    .controller-remote-buttons-item1 {
-        grid-area: 2/2 / 3/3;
-        @include controllerimg-mobile;
-    }
-    .controller-remote-buttons-item2 {
-        padding-left: 1rem;
-        grid-area: 3/1 / 4/2;
-        @include controllerimg-mobile;
-    }
-    .controller-remote-buttons-item3 {
-        grid-area: 4/1 / 5/3;
-        @include controllerimg-mobile;
-    }
-    .controller-remote-buttons-item4 {
-        grid-area: 5/1 / 6/2;
-        @include controllerimg-mobile;
-    }
 }
