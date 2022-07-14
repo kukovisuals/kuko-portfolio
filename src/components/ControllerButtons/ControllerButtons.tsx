@@ -66,7 +66,7 @@ function ControllerButtons() {
     },[buttonIndex])
 
     
-    console.log(  carouselDirection);
+    // console.log(  carouselDirection);
 
     const DisplayArt = () => {
         return (
@@ -185,7 +185,7 @@ interface PageProp {
 }
 
 const ArtImage = (props: PageProp) => {
-    console.log(props.displayLink);
+    // console.log(props.displayLink);
     return (
         <div className="controller-carusel-items">
             <div className="controller-carusel-image">

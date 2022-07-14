@@ -1,14 +1,43 @@
 import React from "react";
-import moveCarousel from "../../redux/actions/arrowsController";
+// import MoverCarousel from "../../redux/actions/MoverCarousel";
+import { useAppDispatch, useAppSelector } from "../../Hook/Hook";
+import { down, up, left, right } from "../../redux/reducer/counter-slice";
 import ArrowsIcon from './ArrowsIcon';
 
 const ArrowsRemote = () => {
+
+    const carouselDirection = useAppSelector((state) => state.controller);
+    const dispatch = useAppDispatch();
 
     const handleClick = (event: React.MouseEvent<HTMLImageElement>): any => {
         event.stopPropagation();
         moveCarousel(event.currentTarget.id);
     };
 
+
+    const moveCarousel = (name: string | number): void => {
+
+        switch (name) {
+            case "up":
+            case 38:
+                dispatch(up());
+                break;
+            case "down":
+            case 40:
+                dispatch(down());
+                break;
+            case "left":
+            case 37:
+                dispatch(left(carouselDirection));
+                break;
+            case "right":
+            case 39:
+                dispatch(right(carouselDirection));
+                break;
+            default:
+                throw new Error("Something went wrong");
+        }
+    };
 
     React.useEffect(() => {
         const keyDownFucntion = (ev: KeyboardEvent) => {
@@ -18,7 +47,7 @@ const ArrowsRemote = () => {
         document.addEventListener("keydown", keyDownFucntion);
 
         return () => document.removeEventListener("keydown", keyDownFucntion);
-    }, [moveCarousel]);
+    }, [carouselDirection]);
 
 
     return (

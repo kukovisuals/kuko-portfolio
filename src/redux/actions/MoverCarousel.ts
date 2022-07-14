@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "../../Hook/Hook";
-import { down, up, left, right } from "../../redux/reducer/counter-slice";
+import { down, up, left, right } from "../reducer/counter-slice";
 
-const moveCarousel = (name: string | number): void => {
+const MoverCarousel = (name: string | number): void => {
 
     const carouselDirection = useAppSelector((state) => state.controller);
     const dispatch = useAppDispatch();
@@ -28,4 +28,4 @@ const moveCarousel = (name: string | number): void => {
     }
 };
 
-export default moveCarousel;
+export default MoverCarousel;
