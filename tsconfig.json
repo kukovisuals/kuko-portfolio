@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "outDir": "build/lib",
+    "target": "ES5",
+    "baseUrl": "./",
+    "outDir": "./build",
     "lib": [
       "dom",
       "dom.iterable",
@@ -12,7 +13,6 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "rootDir": "src",
-    "baseUrl": "src",
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -21,9 +21,15 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "module": "es6",
+    "preserveConstEnums": true,
     "jsx": "react-jsx"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+  "exclude": ["build", "scripts"]
 }
