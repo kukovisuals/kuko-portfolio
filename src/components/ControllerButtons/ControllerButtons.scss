@@ -35,21 +35,21 @@
         }
     }
     .active-art {
-        background: #0014ff;
+        background: c.$artColor;
         @include icon-invert;
     }
     .active-work {
-        background: #09ba87;
+        background: c.$workColor;
 
         @include icon-invert;
     }
     .active-project {
-        background: #ff0dbf;
+        background: c.$projectcolor;
 
         @include icon-invert;
     }
     .active-contact {
-        background: #ffc900;
+        background: c.$contactColor;
 
         @include icon-invert;
     }
@@ -57,10 +57,22 @@
 
 @mixin controllerimg-mobile {
     cursor: pointer;
-    .controller-remote-buttons-img {
+        justify-self:right;
+        .controller-remote-buttons-img {
         // border: 1px solid black;
         width: 3rem;
         height: 3rem;
+    }
+}
+
+@mixin controllerimg-tablet {
+        cursor: pointer;
+        // justify-self:right;
+
+        .controller-remote-buttons-img {
+        // border: 1px solid black;
+        width: 4rem;
+        height: 4rem;
     }
 }
 
@@ -90,7 +102,6 @@
 
 .controller-carusel-description {
     grid-area: 7/2 / 8/3;
-    border: 4px solid #d9d9d9;
     width: 100%;
     max-width:125px;
     justify-self: end;
@@ -100,6 +111,10 @@
 
         span {
             position: absolute;
+            padding: 0.5rem;
+        border: 4px solid;
+        width: 90%;
+        max-width:125px;
             left: 50%;
             transform: translate(-50%, 25%);
             font-size: 1.5rem;
@@ -110,15 +125,17 @@
 }
 
 .controller-dark-theme {
-    grid-area: 9/1 / 10/2;
+    grid-area: 10/1 / 10/2;
 }
 .controller-remote-buttons-item1 {
     grid-area: 2/2 / 3/3;
     @include controllerimg;
+    justify-self:left;
 }
 .controller-remote-buttons-item2 {
     grid-area: 3/1 / 4/2;
     @include controllerimg;
+    justify-self:right;
 }
 .controller-remote-buttons-item3 {
     grid-area: 4/1 / 5/3;
@@ -127,49 +144,94 @@
 .controller-remote-buttons-item4 {
     grid-area: 5/1 / 6/2;
     @include controllerimg;
+    justify-self:right;
 }
 
 
-
+@media only screen and (max-width: 1050px) {
+    .controller-carusel-description {
+grid-area: 8/2/8/3;
+    // justify-self:left;
+    }
+.controller-carusel {
+    grid-area: 3/3/8/5;
+        box-shadow: 5px 6px 12px 1px #c9c9c9, -15px -16px 15px #ffffff;
+}
+    .controller-dark-theme {
+        grid-area: 10/1/10/3;
+        padding-bottom:1rem;
+        justify-self:center;
+    }
+    
+    .controller-remote-buttons-item1 {
+        grid-area: 2/2 / 3/2;
+        @include controllerimg-tablet;
+    }
+    .controller-remote-buttons-item2 {
+        grid-area: 3/1 / 4/2;
+        @include controllerimg-tablet;
+            // padding-right: 1.5rem;
+    }
+    .controller-remote-buttons-item3 {
+        grid-area: 4/2 / 5/2;
+        @include controllerimg-tablet;
+    }
+    .controller-remote-buttons-item4 {
+        grid-area: 5/1 / 6/2;
+        @include controllerimg-tablet;
+            // padding-right: 1.5rem;
+    }
+        
+}
 @media only screen and (max-width: 600px) {
     
 
     .controller-carusel-description {
-        grid-area: 8/1 / 8/2;
+        grid-area: 9/2 / 9/3;
         width: 50%;
         height: 50%;
+        justify-self: right;
 
         .controller-carusel-description-container{
 
             span {
+    min-width:80px;
                 transform: translate(-50%, 6%);
             }
         }
     }
         
     .controller-carusel {
-        grid-area: 5/2/9/5;
-        width: 20rem;
-        height: 20rem;
+        grid-area: 3/2/9/5;
+        width: 17rem;
+    height: 17rem;
+        box-shadow: 8px 3px 10px 1px #c9c9c9, -7px -7px 20px #ffffff;
+            align-self: center;
     }
     .controller-dark-theme {
-        grid-area: 9/1/10/2;
+        grid-area: 10/1/10/3;
+        padding-bottom:1rem;
     }
     .controller-remote-buttons-item1 {
-        grid-area: 2/2 / 3/3;
+        grid-area: 2/1 / 3/2;
         @include controllerimg-mobile;
     }
     .controller-remote-buttons-item2 {
-        padding-left: 1rem;
         grid-area: 3/1 / 4/2;
         @include controllerimg-mobile;
+            padding-right: 1.5rem;
     }
     .controller-remote-buttons-item3 {
-        grid-area: 4/1 / 5/3;
+        grid-area: 4/1 / 5/2;
         @include controllerimg-mobile;
     }
     .controller-remote-buttons-item4 {
         grid-area: 5/1 / 6/2;
         @include controllerimg-mobile;
+            padding-right: 1.5rem;
     }
 }
+
+
+
+

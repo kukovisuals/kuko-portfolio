@@ -14,6 +14,7 @@ import { workLinks, projectLinks, contactLinks, artLinks } from "../../data/link
 
 function ControllerButtons() {
     const [displaySelection, setDisplaySelection] = React.useState('Art')
+    const [frameColor, setFrameColor] = React.useState('#0014ff')
     const chooseButton = ['art', 'work','project', 'contact']
 
     const carouselDirection = useAppSelector((state) => state.counter.value);
@@ -34,21 +35,25 @@ function ControllerButtons() {
                 dispatch(artButton());
                 dispatch(restart());
                 setDisplaySelection('Art')
+                setFrameColor('#0014ff')
                 break;
             case "work":
                 dispatch(workButton());
                 dispatch(restart());
                 setDisplaySelection('Work')
+                setFrameColor('#09ba87')
                 break;
             case "project":
                 dispatch(projectButton());
                 dispatch(restart());
                 setDisplaySelection('Projects')
+                setFrameColor('#ff0dbf')
                 break;
             case "contact":
                 dispatch(contactButton());
                 dispatch(restart());
                 setDisplaySelection('Contact')
+                setFrameColor('#ffc900')
                 break;
             default:
                 throw new Error("Something went wrong");
@@ -65,6 +70,7 @@ function ControllerButtons() {
         dispatchButtonAction(chooseButton[buttonIndex]);
     },[buttonIndex])
 
+    console.log(frameColor);
     
     // console.log(  carouselDirection);
 
@@ -108,7 +114,6 @@ function ControllerButtons() {
     const activeProject = controllerArt.project ? "active-project" : "";
     const activeContact = controllerArt.contact ? "active-contact" : "";
 
-    // console.log(activeArt);
     return (
         <>
             <div
@@ -166,7 +171,7 @@ function ControllerButtons() {
 
             <div className="controller-carusel-description">
                 <div className="controller-carusel-description-container">
-                    <span>{displaySelection}</span>
+                    <span style={{borderColor:frameColor}} >{displaySelection}</span>
                 </div>
             </div>
             <div className="controller-carusel">

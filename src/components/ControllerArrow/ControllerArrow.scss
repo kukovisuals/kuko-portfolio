@@ -1,3 +1,4 @@
+@use "../../utilities/variablesStyle.scss" as c;
 @mixin arrows-img {
     cursor: pointer;
 
@@ -21,6 +22,29 @@
 @mixin arrows-center {
     background: linear-gradient(145deg, #ffffff, #dadada);
        box-shadow: 2px 6px 34px #bdbdbd, -17px -17px 34px #ffffff;
+}
+
+
+@mixin arrows-hover{
+    .active-art {
+        fill: c.$artColor;
+        
+    }
+    .active-work {
+        fill: c.$workColor;
+
+        
+    }
+    .active-project {
+        fill: c.$projectcolor;
+
+        
+    }
+    .active-contact {
+        fill: c.$contactColor;
+
+        
+    }
 }
 
 .controller-remote-grid {
@@ -57,7 +81,7 @@
     }
     .controller-item4 {
         grid-area: 2/3 / 2/4;
-
+        @include arrows-hover;
         // border: 1px solid black;
         @include arrows-img;
     }
@@ -70,10 +94,6 @@
 
 @media only screen and (max-width: 600px) {
 
-  .App{
-    gap:0;
-    margin: 0;
-  }
   .controller-carusel{
    width: 15rem;
     height: 15rem;

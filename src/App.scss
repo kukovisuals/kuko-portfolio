@@ -18,7 +18,6 @@ body {
     justify-content: space-evenly;
     justify-items: center;
     gap: 2rem;
-    margin-left: 2rem;
 
   
 }
@@ -27,8 +26,15 @@ body {
 
 @media only screen and (max-width: 600px) {
     .App {
-        gap: 0;
-
+        gap: 1rem;
+    grid-template: repeat(11, 1fr) / repeat(4, 1fr);
+        margin-left: 0;
     }
 
+}
+@media only screen and (max-width: 1050px) {
+
+.App{
+    gap:0.8rem;
+  }
 }
