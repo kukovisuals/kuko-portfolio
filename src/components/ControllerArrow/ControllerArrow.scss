@@ -1,34 +1,10 @@
 @use "../../utilities/variablesStyle.scss" as c;
-@mixin arrows-img {
-    cursor: pointer;
-
-    div {
-        position: relative;
-        img {
-            width: 37%;
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 75%);
-        }
-    }
-}
-
-@mixin arrows-shadow {
-    background: #f2f2f2;
-    box-shadow: inset 29px 29px 57px #d5d5d5, inset -20px -17px 57px #ffffff;
-}
-
-@mixin arrows-center {
-    background: linear-gradient(145deg, #ffffff, #dadada);
-       box-shadow: 2px 6px 34px #bdbdbd, -17px -17px 34px #ffffff;
-}
 
 
 @mixin arrows-hover{
     .active-art {
         fill: c.$artColor;
-        
+
     }
     .active-work {
         fill: c.$workColor;
@@ -46,6 +22,82 @@
         
     }
 }
+@mixin arrows-hover-true{
+    .active-art.active{
+        fill: white;
+        filter: blur(8px);
+    }
+
+    .active-work.active {
+        fill: white;
+        filter: blur(8px);
+    }
+    .active-project.active {
+        fill: white;
+        filter: blur(8px);
+    }    
+    
+    .active-contact.active {
+        fill: white;
+        filter: blur(8px);
+    }
+}
+
+
+
+@mixin arrows-img {
+    cursor: pointer;
+
+    div {
+        position: relative;
+        img {
+            width: 50%;
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, 50%);
+        }
+        svg {
+            width: 80%;
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, 10%);
+
+            @include arrows-hover;
+
+            &:hover {
+                @include arrows-hover-true;
+
+            }
+
+            .sides{
+                
+            }
+            .base-container{
+                transform: translate(4px, 4px);
+
+                .path-base{
+                    fill: #6a6a6a;
+                    filter: blur(4px);
+                }
+            }
+
+        }
+    }
+}
+
+@mixin arrows-shadow {
+    background: #f2f2f2;
+    box-shadow: inset 29px 29px 57px #d5d5d5, inset -20px -17px 57px #ffffff;
+}
+
+@mixin arrows-center {
+    background: linear-gradient(145deg, #ffffff, #dadada);
+       box-shadow: 2px 6px 34px #bdbdbd, -17px -17px 34px #ffffff;
+}
+
+
 
 .controller-remote-grid {
     display: grid;
@@ -59,20 +111,14 @@
 
     .controller-item1 {
         grid-area: 1/2 / 1/3;
-
-        // border-top: 1px solid black;
         @include arrows-img;
     }
     .controller-item2 {
         grid-area: 2/1 / 2/2;
-
-        // border: 1px solid black;
         @include arrows-img;
     }
     .controller-item3 {
         grid-area: 2/2 / 2/3;
-
-        // border: 1px solid black;
         @include arrows-center;
 
         border-radius: 100%;
@@ -81,13 +127,10 @@
     }
     .controller-item4 {
         grid-area: 2/3 / 2/4;
-        @include arrows-hover;
-        // border: 1px solid black;
         @include arrows-img;
     }
     .controller-item5 {
         grid-area: 3/2 / 3/3;
-        // border-bottom: 1px solid black;
         @include arrows-img;
     }
 }

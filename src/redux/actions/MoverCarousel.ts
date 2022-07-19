@@ -17,11 +17,11 @@ const MoverCarousel = (name: string | number): void => {
             break;
         case "left":
         case 37:
-            dispatch(left(carouselDirection));
+            dispatch(left());
             break;
         case "right":
         case 39:
-            dispatch(right(carouselDirection));
+            dispatch(right());
             break;
         default:
             throw new Error("Something went wrong");

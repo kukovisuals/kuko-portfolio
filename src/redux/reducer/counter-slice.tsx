@@ -6,6 +6,7 @@ export interface CounterState {
     education: string;
     value: number;
     buttonMenu: number;
+    carouselSize: number;
 }
 
 export interface controllerState {
@@ -18,7 +19,8 @@ export interface controllerState {
 const initialState: CounterState = {
     education: '',
     value: 0,
-    buttonMenu: 0
+    buttonMenu: 0,
+    carouselSize: 12,
 }
 
 const moveLeft = 1;
@@ -28,7 +30,6 @@ const work = kuko.work["shaders"];
 const project = kuko.project["shaders"];
 const contact = kuko.contact["shaders"];
 
-console.log(project.length)
 
 const galleryChosen = (data: controllerState): number => {
     
@@ -56,19 +57,20 @@ export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        up(state:any ){
+        setCarouselSize(state,  actions: PayloadAction<controllerState> ){
+            state.carouselSize = galleryChosen(actions.payload)
+        },
+        up(state:any){
             state.buttonMenu = (state.buttonMenu === 0) ? numberButtons : state.buttonMenu - 1
         },
-        down(state:any ){
+        down(state:any){
             state.buttonMenu = (state.buttonMenu > 0) && (state.buttonMenu % numberButtons === 0) ? 0 : state.buttonMenu + 1
         },
-        left(state:any , actions: PayloadAction<controllerState> ){
-            const carouselSize = galleryChosen(actions.payload)
-            state.value = (state.value > 0) && (state.value % carouselSize === 0) ? 0 : state.value + moveLeft
+        left(state:any){
+            state.value = (state.value > 0) && (state.value % state.carouselSize === 0) ? 0 : state.value + moveLeft
         },
-        right(state:any , actions: PayloadAction<controllerState> ){
-            const carouselSize = galleryChosen(actions.payload)
-            state.value = (state.value === 0) ? carouselSize : state.value - moveLeft
+        right(state:any ){
+            state.value = (state.value === 0) ? state.carouselSize : state.value - moveLeft
         },
         restart(state:any){
             state.value = 0
@@ -77,6 +79,6 @@ export const counterSlice = createSlice({
 })
 
 
-export const {down, up, left, right, restart} = counterSlice.actions
+export const {down, up, left, right, restart, setCarouselSize} = counterSlice.actions
 export default counterSlice.reducer
 

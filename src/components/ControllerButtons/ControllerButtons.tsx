@@ -7,7 +7,7 @@ import {
     projectButton,
     contactButton,
 } from "../../redux/reducer/controller-slice";
-import { restart } from "../../redux/reducer/counter-slice";
+import { restart, setCarouselSize } from "../../redux/reducer/counter-slice";
 import kuko from "../../data/gallery.json";
 
 import { workLinks, projectLinks, contactLinks, artLinks } from "../../data/linksWork";
@@ -19,7 +19,6 @@ function ControllerButtons() {
 
     const carouselDirection = useAppSelector((state) => state.counter.value);
     const buttonIndex = useAppSelector((state) => state.counter.buttonMenu);
-
     const controllerArt = useAppSelector((state) => state.controller);
 
     const dispatch = useAppDispatch();
@@ -36,24 +35,28 @@ function ControllerButtons() {
                 dispatch(restart());
                 setDisplaySelection('Art')
                 setFrameColor('#0014ff')
+                dispatch(setCarouselSize(controllerArt))
                 break;
             case "work":
                 dispatch(workButton());
                 dispatch(restart());
                 setDisplaySelection('Work')
                 setFrameColor('#09ba87')
+                dispatch(setCarouselSize(controllerArt))
                 break;
             case "project":
                 dispatch(projectButton());
                 dispatch(restart());
                 setDisplaySelection('Projects')
                 setFrameColor('#ff0dbf')
+                dispatch(setCarouselSize(controllerArt))
                 break;
             case "contact":
                 dispatch(contactButton());
                 dispatch(restart());
                 setDisplaySelection('Contact')
                 setFrameColor('#ffc900')
+                dispatch(setCarouselSize(controllerArt))
                 break;
             default:
                 throw new Error("Something went wrong");
@@ -69,8 +72,6 @@ function ControllerButtons() {
 
         dispatchButtonAction(chooseButton[buttonIndex]);
     },[buttonIndex])
-
-    console.log(frameColor);
     
     // console.log(  carouselDirection);
 

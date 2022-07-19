@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="black">
+        <path   
+            strokeWidth="4" 
+            d="M 50,90 10,50 50,10 
+                50,20 20,50 50,80"
+
+            />
+    </g>
+</svg>

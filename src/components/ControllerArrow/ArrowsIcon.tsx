@@ -1,7 +1,9 @@
+
+
 interface ArrowsProp {
     handleClick(event: React.MouseEvent<HTMLImageElement>): () => {};
-    altName:string;
-    arrowLink: string;
+    altName?:string;
+    arrowLink?: any;
     classNum: string;
     idLabel: string;
 }
@@ -10,10 +12,11 @@ const ArrowsIcon = (props: ArrowsProp) => {
     return (
         <div className={`controller-item${props.classNum}`} id={props.idLabel} onClick={props.handleClick}>
             <div>
-                <img
+                {/*<img
                     src={props.arrowLink}
                     alt={props.altName}
-                />
+                />*/}
+                {props.arrowLink}
             </div>
         </div>
     )

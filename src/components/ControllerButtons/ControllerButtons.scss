@@ -78,7 +78,7 @@
 
 @mixin display-shadow {
     background: linear-gradient(145deg, #ffffff, #dadada);
-        box-shadow: 5px 6px 20px 1px #c9c9c9, -42px -42px 84px #ffffff;
+     box-shadow: 5px 6px 20px 1px #c9c9c9, -1px -6px 84px #ffffff;
 }
 
 .controller-carusel {
@@ -155,7 +155,7 @@ grid-area: 8/2/8/3;
     }
 .controller-carusel {
     grid-area: 3/3/8/5;
-        box-shadow: 5px 6px 12px 1px #c9c9c9, -15px -16px 15px #ffffff;
+        box-shadow: 13px 11px 20px 0px #c9c9c9, -4px -4px 20px 4px #ffffff;
 }
     .controller-dark-theme {
         grid-area: 10/1/10/3;

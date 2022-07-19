@@ -1,0 +1,13 @@
+.CarouselGuide{
+	grid-area: 8/4/8/4;
+    width: 100%;
+	border: 1px solid black;
+
+	.CarouselGuide-container{
+		display: flex;
+
+		.CarouselGuide-list{
+			border: 1px solid red;
+		}
+	}
+}

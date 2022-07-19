@@ -1,38 +1,79 @@
 import React from "react";
 // import MoverCarousel from "../../redux/actions/MoverCarousel";
 import { useAppDispatch, useAppSelector } from "../../Hook/Hook";
-import { down, up, left, right } from "../../redux/reducer/counter-slice";
+import { down, up, left, right, setCarouselSize } from "../../redux/reducer/counter-slice";
+import {ArrowUp, ArrowDown, ArrowLeft, ArrowRight} from './ArrowDirection';
 import ArrowsIcon from './ArrowsIcon';
 
+
 const ArrowsRemote = () => {
+    const [arrowColor, setArrowColor] = React.useState('active-art')
 
     const carouselDirection = useAppSelector((state) => state.controller);
     const dispatch = useAppDispatch();
 
+    
     const handleClick = (event: React.MouseEvent<HTMLImageElement>): any => {
         event.stopPropagation();
         moveCarousel(event.currentTarget.id);
     };
 
+    const menuOption = (data: any) => {
+        const values = Object.entries(data)
+        let optionArrowColor = ''
+        let active = ''
+
+        for(const [k, v] of values){
+            // check if the button is true 
+            if(v){
+                active = k
+                break;
+            }
+        }
+        
+        switch(active){
+            case 'art': 
+                optionArrowColor = 'active-art'
+                break;
+            case 'work': 
+                optionArrowColor = 'active-work'
+                break;
+            case 'project': 
+                optionArrowColor = 'active-project'
+                break;
+            case 'contact': 
+                optionArrowColor = 'active-contact'
+                break;
+            default: 
+                throw new Error('Active colors went wrong')
+                break
+        }
+        setArrowColor(optionArrowColor)
+    }
 
     const moveCarousel = (name: string | number): void => {
+        
 
         switch (name) {
             case "up":
             case 38:
                 dispatch(up());
+                dispatch(setCarouselSize(carouselDirection))
                 break;
             case "down":
             case 40:
                 dispatch(down());
+                dispatch(setCarouselSize(carouselDirection))
                 break;
             case "left":
             case 37:
-                dispatch(left(carouselDirection));
+                dispatch(setCarouselSize(carouselDirection))
+                dispatch(left());
                 break;
             case "right":
             case 39:
-                dispatch(right(carouselDirection));
+                dispatch(setCarouselSize(carouselDirection))
+                dispatch(right());
                 break;
             default:
                 throw new Error("Something went wrong");
@@ -46,10 +87,13 @@ const ArrowsRemote = () => {
 
         document.addEventListener("keydown", keyDownFucntion);
 
+        menuOption(carouselDirection);
+
         return () => document.removeEventListener("keydown", keyDownFucntion);
     }, [carouselDirection]);
+    
 
-
+    // console.log(carouselDirection)
     return (
         <div className="controller-remote-grid">
             
@@ -57,7 +101,7 @@ const ArrowsRemote = () => {
                 classNum="1"
                 idLabel="up"
                 handleClick={handleClick}
-                arrowLink="https://visualpharm.com/assets/932/Collapse%20Arrow-595b40b75ba036ed117d6f0b.svg"
+                arrowLink={<ArrowUp classSvg={arrowColor}/>}
                 altName="up"
             />
    
@@ -65,14 +109,14 @@ const ArrowsRemote = () => {
                 classNum="2"
                 idLabel="left"
                 handleClick={handleClick}
-                arrowLink="https://visualpharm.com/assets/107/Back-595b40b65ba036ed117d1766.svg"
+                arrowLink={<ArrowLeft classSvg={'sides'}/>}
                 altName="left"
             />
             <ArrowsIcon
                 classNum="4"
                 idLabel="right"
                 handleClick={handleClick}
-                arrowLink="https://visualpharm.com/assets/746/Forward-595b40b65ba036ed117d1767.svg"
+                arrowLink={<ArrowRight classSvg={'sides'}/>}
                 altName="right"
             />
    
@@ -80,10 +124,9 @@ const ArrowsRemote = () => {
                 classNum="5"
                 idLabel="down"
                 handleClick={handleClick}
-                arrowLink="https://visualpharm.com/assets/409/Expand%20Arrow-595b40b75ba036ed117d74ae.svg"
+                arrowLink={<ArrowDown classSvg={arrowColor}/>}
                 altName="down"
             />
-            
         </div>
     );
 };
