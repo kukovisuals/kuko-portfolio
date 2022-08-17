@@ -126,6 +126,9 @@ function ControllerButtons() {
                     <img
                         src="https://visualpharm.com/assets/30/Brush-595b40b85ba036ed117daf66.svg"
                         alt="art"
+                        width="300"
+                        height="300"
+
                     />
                 </div>
                 
@@ -142,6 +145,9 @@ function ControllerButtons() {
                     <img
                         src="https://visualpharm.com/assets/879/Website-595b40b65ba036ed117d08d6.svg"
                         alt="up"
+                        width="300"
+                        height="300"
+
                     />
                 </div>
             </div>
@@ -156,6 +162,9 @@ function ControllerButtons() {
                     <img
                         src="https://visualpharm.com/assets/110/Worker-595b40b85ba036ed117db970.svg"
                         alt="up"
+                        width="300"
+                        height="300"
+
                     />
                 </div>
             </div>
@@ -170,6 +179,9 @@ function ControllerButtons() {
                     <img
                         src="https://visualpharm.com/assets/981/Email-595b40b75ba036ed117d5da9.svg"
                         alt="up"
+                        width="300"
+                        height="300"
+
                     />
                 </div>
             </div>
@@ -198,7 +210,12 @@ const ArtImage = (props: PageProp) => {
         <div className="controller-carusel-items">
             <div className="controller-carusel-image">
                 <a href={props.displayLink}>
-                    <img src={props.pagina} alt="kukoart" />
+                    <img src={props.pagina} 
+                        alt="kukoart"
+                        width="300"
+                        height="300"
+                        loading="lazy"
+                    />
                 </a>
             </div>
         </div>
