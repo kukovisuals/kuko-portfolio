@@ -20,7 +20,7 @@ const initialState: CounterState = {
     education: '',
     value: 0,
     buttonMenu: 0,
-    carouselSize: 12,
+    carouselSize: 0,
 }
 
 const moveLeft = 1;

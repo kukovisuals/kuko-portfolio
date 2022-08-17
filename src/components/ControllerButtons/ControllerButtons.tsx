@@ -128,6 +128,10 @@ function ControllerButtons() {
                         alt="art"
                     />
                 </div>
+                
+                <div className="controller-carusel">
+                    <DisplayArt />
+                </div>
             </div>
             <div
                 className="controller-remote-buttons-item2"
@@ -175,9 +179,7 @@ function ControllerButtons() {
                     <span style={{borderColor:frameColor}} >{displaySelection}</span>
                 </div>
             </div>
-            <div className="controller-carusel">
-                <DisplayArt />
-            </div>
+            
 
             
 

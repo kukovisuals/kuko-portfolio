@@ -1,7 +1,7 @@
 import React from "react";
 // import MoverCarousel from "../../redux/actions/MoverCarousel";
 import { useAppDispatch, useAppSelector } from "../../Hook/Hook";
-import { down, up, left, right, setCarouselSize } from "../../redux/reducer/counter-slice";
+import { down, up, left, right } from "../../redux/reducer/counter-slice";
 import {ArrowUp, ArrowDown, ArrowLeft, ArrowRight} from './ArrowDirection';
 import ArrowsIcon from './ArrowsIcon';
 
@@ -15,6 +15,7 @@ const ArrowsRemote = () => {
     
     const handleClick = (event: React.MouseEvent<HTMLImageElement>): any => {
         event.stopPropagation();
+    console.log(carouselDirection)
         moveCarousel(event.currentTarget.id);
     };
 
@@ -46,7 +47,6 @@ const ArrowsRemote = () => {
                 break;
             default: 
                 throw new Error('Active colors went wrong')
-                break
         }
         setArrowColor(optionArrowColor)
     }
@@ -58,21 +58,17 @@ const ArrowsRemote = () => {
             case "up":
             case 38:
                 dispatch(up());
-                dispatch(setCarouselSize(carouselDirection))
                 break;
             case "down":
             case 40:
                 dispatch(down());
-                dispatch(setCarouselSize(carouselDirection))
                 break;
             case "left":
             case 37:
-                dispatch(setCarouselSize(carouselDirection))
                 dispatch(left());
                 break;
             case "right":
             case 39:
-                dispatch(setCarouselSize(carouselDirection))
                 dispatch(right());
                 break;
             default:
@@ -93,7 +89,6 @@ const ArrowsRemote = () => {
     }, [carouselDirection]);
     
 
-    // console.log(carouselDirection)
     return (
         <div className="controller-remote-grid">
             
