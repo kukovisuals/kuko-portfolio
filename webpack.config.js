@@ -29,6 +29,7 @@ module.exports = {
       new MiniCssExtractPlugin(), 
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, './public/index.html'), // template file
+        favicon: "./public/favicon.ico",
         filename: 'index.html', // output file
    }),
     new CleanWebpackPlugin(),
